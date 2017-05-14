@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=1200">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mario Kart 8 Deluxe - Find Better Builds</title>
+	<script type="text/javascript" src="js/data/groups.js"></script>
+	<script type="text/javascript" src="js/data/parts.js"></script>
+	<script type="text/javascript" src="js/data/stats.js"></script>
+	<script type="text/javascript" src="js/locale/str.js"></script>
+	<script type="text/javascript" src="js/preloader.js"></script>
+	<script type="text/javascript" src="js/sort.js"></script>
+<style>
+body{
+	margin:0px;
+	font-family:Arial;
+	font-size:10;
+	background-color:#112;
+}
+
+#contentWrapper{
+	margin:auto;
+	margin-top:30px;
+	margin-bottom:20px;
+	width:100%;
+        min-width:1160px;
+	max-width:1160px;
+	background-color:#cdd;
+	display:block;
+}
+#selectWrapper{
+	width:90%;
+	margin:auto;
+	text-align:center;
+}
+h1{
+	margin:0px;
+	padding-top:10px;
+	width:100;
+	text-align:center;
+	display:block;
+}
+p{
+	text-indent:30px;
+	font-size:0.9em;
+	margin: 10px 25px;
+}
+h2{
+	margin:0px;
+	padding-top:10px;
+	margin-left:10px;
+	font-size:1em;
+	color:black;
+	display:block;
+}
+input[type="button"]{
+	font-weight:bold;
+	width:140px;
+	height:25px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	display:block;
+}
+#selectWrapper h2{
+	font-size:.8em;
+	margin:0px;
+	text-align:center;
+	width:20%;
+	margin-right:2%;
+	display:inline-block;
+}
+#selectWrapper select{
+	height:180px;
+	width:20%;
+	margin-left:0;
+	margin-right:2%;
+	box-sizing:border-box;
+	display:inline-block;
+}
+#selectWrapper select:nth-child(8){
+	margin-right:0;
+}
+#selectWrapper h2:nth-child(4){
+	margin-right:0;
+}
+select{
+	margin-left:15px;	
+}
+
+#resultsArea{
+	width:100%;
+	background-color:#cdd;
+}
+table{
+	font-size:0.8em;
+	width:100%;
+	text-align:center;
+}
+table, th, td{
+	border: 1px solid black;
+	border-collapse:collapse;
+	box-sizing:border-box;
+}
+tr:first-child{
+	border-top:2px solid black;
+}
+tr:last-child{
+	border-bottom:2px solid black;
+}
+tr:nth-child(2) th{
+	height:33px;
+}
+tr:nth-child(2) th:nth-child(-n+4){
+	width:104px;
+}
+tr:nth-child(2) th:nth-child(n+5){
+	width: 62px;
+	font-size:0.9em;
+}
+tr:nth-child(2) th:nth-child(4), tr:first-child th:first-child, td:nth-child(4){
+	border-right:2px solid black;
+}
+th{
+	background-color:#58A;
+}
+td{
+	height:78px;
+	max-height:66px;
+	background-color:#cdd;
+	overflow:hidden;
+}
+td:nth-child(-n+4){
+	padding-top:4px;
+}
+img{
+	display:inline-block;
+	margin:auto;
+}
+td:nth-child(n+5){
+	background-color:#ddf;
+}
+td:nth-child(n+11){
+	background-color:#fdd;
+}
+td:nth-child(n+14){
+	background-color:#dfd;
+}
+td b{
+	font-size:1.3em;
+}
+#resultText{
+	padding-top:17px;
+	padding-left:20px;
+	height:50px;
+	width:100%;
+	box-sizing:border-box;
+	display:inline-block;
+}
+table:last-child{
+	display:none;
+}
+</style>
+</head>
+<body>
+<div id="contentWrapper">
+<h1>Mario Kart 8 Deluxe - Find Better Builds</h1>
+<p>In Mario Kart 8 Deluxe—taking into account characters and parts that share the same stats—there are 8064 unique build combinations. 
+Of those 8064, over half of them (4186) are statistically outclassed by other combinations. In other words: for each of those 4186 combinations, there exists 
+another build with the same or higher values for every stat (speed, acceleration, weight, handling, traction, 
+and all hidden stats,) with at least one stat value that is definitely higher. If you choose to ignore the weight stat, 
+that number increases to 5312. This page will allow you to easily find any character and vehicle combinations 
+that statistically outclass your current build. You can manually choose whether weight should be evaluated or not.</p>
+<h2>Select your character and vehicle parts:</h1>
+<div id="selectWrapper">
+<h2>Character</h1>
+<h2>Body</h1>
+<h2>Tires</h1>
+<h2>Glider</h1>
+<select class="partSelect" size="2"></select>
+<select class="partSelect" size="2"></select>
+<select class="partSelect" size="2"></select>
+<select class="partSelect" size="2"></select>
+</div>
+<h2>Do you care about the weight stat?</h1>
+<select id="weightOption">
+  <option>Yes, I want the weight the same or higher</option>
+  <option>Yes, I want the weight the same or lower</option>
+  <option>Yes, I want the weight the exact same</option>
+  <option>No, any weight value is fine</option>
+</select><br>
+<input id="searchButton" type="button" value="Search">
+<div id="resultsArea">
+<table>
+<tr><th colspan="4">Your Build</th><th colspan="12">Your Build's Stats</th></tr>
+<tr>
+  <th>Character</th>
+  <th>Body</th>
+  <th>Tires</th>
+  <th>Glider</th>
+  <th>Speed</th>
+  <th>Accel.</th>
+  <th>Weight</th>
+  <th>Handling</th>
+  <th>Traction</th>
+  <th>Miniturbo</th>
+  <th>Speed (Air)</th>
+  <th>Speed (Water)</th>
+  <th>Speed (Anti-G)</th>
+  <th>Handling (Air)</th>
+  <th>Handling (Water)</th>
+  <th>Handling (Anti-G)</th>
+</tr>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>
+<span id="resultText">Click "Search" to display results.</span>
+<table>
+<tr><th colspan="4">Alternate Build</th><th colspan="12">Difference From Your Build</th></tr>
+<tr>
+  <th>Character</th>
+  <th>Body</th>
+  <th>Tires</th>
+  <th>Glider</th>
+  <th>Speed</th>
+  <th>Accel.</th>
+  <th>Weight</th>
+  <th>Handling</th>
+  <th>Traction</th>
+  <th>Miniturbo</th>
+  <th>Speed (Air)</th>
+  <th>Speed (Water)</th>
+  <th>Speed (Anti-G)</th>
+  <th>Handling (Air)</th>
+  <th>Handling (Water)</th>
+  <th>Handling (Anti-G)</th>
+</tr>
+</tr>
+</table>
+</div>
+</div>
+
+<script>
+var settings={
+  locale:0
+};
+
+var ui = {
+  lists:["chara","kart","tire","glider"],
+  maxResults: 50,
+  resultsHeader: "",
+
+  populateLists(){
+    var selects = document.querySelectorAll("#selectWrapper select");
+    for(var i=0;i<ui.lists.length;i++){
+      var type = ui.lists[i];
+      var select = selects[i];
+      var out = "";
+      for(var j=0;j<parts[type].length;j++){
+        out = out+"<option>"+str.get(type,parts[type][j][0])+"</option>";
+      }
+      select.innerHTML = out;
+      select.selectedIndex = 0;
+    }  
+  },
+
+  setDisplayBuild:function(selected){
+    var group = [];
+    var order = [0,4,5,6,10,11,2,1,3,8,7,9];
+    var td = document.querySelectorAll("table:first-child tr:nth-child(3) td");
+    var out = "";
+    for(var i=0;i<selected.length;i++){
+      out = "";
+      var type = ui.lists[i];
+      group[i] = parts[ui.lists[i]][selected[i]][1];
+      var list = groups[type][group[i]];
+      for(var j=0;j<list.length;j++){
+        if(i==0&&j==2) out = out + "<br>";
+        var width = i==0?32:50;
+        var name = str.get(type,list[j]);
+        out = out+"<img src=\"img/"+type+"_"+list[j]+".png\" alt=\""+name+"\" title=\""+name+"\" height=\"32\" width=\""+width+"\">";
+      }
+      td[i].innerHTML = out;
+    }
+    for(i=0;i<12;i++){
+      var stat = 0;
+      for(j=0;j<4;j++){
+        stat += stats[ui.lists[j]][group[j]][order[i]];
+      }
+      td[i+4].innerHTML = (stat*0.25 + 0.75);
+    }
+  },
+
+  isSuperior:function(base,alt){
+    var weight = document.getElementById("weightOption").selectedIndex;
+    for(var i=0;i<base.length;i++){
+      if(i != 5 && alt[i] < base[i]) return false;
+    }
+    var isEqual = true;
+    for(var i=0;i<base.length;i++){
+      if(alt[i] != base[i]) isEqual = false;
+    }
+    if(isEqual) return false;
+    
+    if(weight == 0 && alt[5] >= base[5]) return true;
+    if(weight == 1 && alt[5] <= base[5]) return true;
+    if(weight == 2 && alt[5] == base[5]) return true;
+    if(weight == 3) return true;
+    return false;
+  },
+
+  setResultsDisplay:function(results,statSetA){
+    var order = [0,4,5,6,10,11,2,1,3,8,7,9];
+    var table = document.querySelectorAll("table")[1];
+    var out = ui.resultsHeader;
+
+    results.sort(sort.sortResults);
+
+    for(var i=0;i<results.length && i < ui.maxResults;i++){
+      out = out+"<tr>";
+      for(var j=0;j<4;j++){
+        var type = ui.lists[j];
+        out = out+"<td>";
+        var group = groups[type][results[i][j]];
+        for(var k=0;k<group.length;k++){
+          if(j==0 && k==2) out = out+"<br>";
+          var name = str.get(type,group[k]);
+          var width = j==0?32:50;
+          out = out+"<img src=\"img/"+type+"_"+group[k]+".png\" alt=\""+name+"\" title=\""+name+"\" height=\"32\" width=\""+width+"\">";
+        }
+        out = out+"</td>";
+      }
+      for(j=0;j<12;j++){
+        out = out+"<td>";
+        var statB = (stats.chara[results[i][0]][order[j]]+stats.kart[results[i][1]][order[j]]+stats.tire[results[i][2]][order[j]]+stats.glider[results[i][3]][order[j]]);
+        var statA = (statSetA[order[j]]);
+        var diff = (statB-statA)*0.25;
+        if(diff < 0) out = out+"<b style=\"color:red\">"+diff+"</b>";
+        else if(diff > 0) out = out+"<b>+"+diff+"</b>";
+        else out = out+diff;
+        out = out+"</td>";
+      }
+      out = out+"</tr>";
+    }
+
+    table.innerHTML = out;
+  },
+
+  search:function(){
+    var results = [];
+    var selected = [];
+    var groupIndex = [];
+    var statSetA = [];
+    var selects = document.querySelectorAll("#selectWrapper select");
+    var table = document.querySelectorAll("table")[1];
+    for(var i=0;i<selects.length;i++){
+      selected[i] = selects[i].selectedIndex;
+      groupIndex[i] = parts[ui.lists[i]][selected[i]][1];
+    }
+    for(i=0;i<12;i++){
+      statSetA[i] = stats.chara[groupIndex[0]][i] + stats.kart[groupIndex[1]][i] + stats.tire[groupIndex[2]][i] + stats.glider[groupIndex[3]][i];
+    }
+
+    ui.setDisplayBuild(selected);
+    for(var a=0;a<stats.chara.length;a++){
+      for(var b=0;b<stats.kart.length;b++){
+        for(var c=0;c<stats.tire.length;c++){
+          for(var d=0;d<stats.glider.length;d++){
+            var statSetB = [];
+            for(i=0;i<12;i++){
+              statSetB[i] = stats.chara[a][i] + stats.kart[b][i] + stats.tire[c][i] + stats.glider[d][i];
+            }
+            if(ui.isSuperior(statSetA,statSetB)){
+              results.push([a,b,c,d]);
+            }            
+          }
+        }
+      }
+    }
+
+    var resultText = "";
+    if(results.length == 0){
+      resultText = "<b>No results found; there are no builds that outclass yours.</b>";
+      table.style.display = "none";
+    }
+    else if(results.length > ui.maxResults){
+      resultText = "<b>Found "+results.length+" results. Showing "+ui.maxResults+" builds with the most significant differences:</b>";
+      ui.setResultsDisplay(results,statSetA);
+      table.style.display = "table";
+    }
+    else{
+      var s = results.length == 1?"":"s";
+      var es = results.length == 1?"es":"";
+      resultText = "<b>Found "+results.length+" build"+s+" that outclass"+es+" yours:</b>";
+      ui.setResultsDisplay(results,statSetA);
+      table.style.display = "table";
+    }
+    document.getElementById("resultText").innerHTML = resultText;
+  },
+
+  init:function(){
+    document.getElementById("searchButton").onclick = ui.search;
+    ui.populateLists();
+    ui.resultsHeader = document.querySelectorAll("table")[1].innerHTML;
+  },
+};
+
+function arraysEqual(a,b){
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+
+
+function init(){
+  str.init();
+  parts.init();
+  groups.init();
+  sort.sortAll();
+  ui.init();
+  preloader.init();
+ // rewriteArray();
+ // weight_distribution();
+}
+
+init();
+</script>
+</body>
+</html>
