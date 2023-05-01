@@ -3,18 +3,18 @@
   */
 var stats = {
   //       SPD (W) (A) (AG) Ac  Wt Hnd (W) (A) (AG) Tr. MT
-  chara: [[  0,  0,  0,  0,  4,  0, 10, 10, 10, 10,  5,  5], //Light (1): Baby Peach, Baby Daisy
-          [  0,  0,  0,  0,  5,  0,  9,  9,  9,  9,  3,  5], //Light (2): Baby Rosa, Lemmy
-          [  1,  1,  1,  1,  5,  1,  8,  8,  8,  8,  4,  4], //Light (3): Baby Mario, Baby Luigi, Dry Bones, Mii
-          [  2,  2,  2,  2,  4,  2,  8,  8,  8,  8,  5,  4], //Light (4): Koopa, Lakitu, Bowser Jr.
-          [  2,  2,  2,  2,  5,  2,  7,  7,  7,  7,  2,  4], //Light (5): Toadette, Wendy, Isabelle
-          [  3,  3,  3,  3,  4,  3,  7,  7,  7,  7,  4,  3], //Light (6): Toad, Shy Guy, Larry
-          [  4,  4,  4,  4,  4,  3,  6,  6,  6,  6,  3,  3], //Medium (1): Cat Peach, Inkling(F), Villager(F)
-          [  5,  5,  5,  5,  3,  4,  5,  5,  5,  5,  3,  3], //Medium (2): Peach, Daisy, Yoshi
-          [  5,  5,  5,  5,  3,  5,  5,  5,  5,  5,  1,  3], //Medium (3): Tanooki Mario, Inkling(M), Villager(M)
-          [  6,  6,  6,  6,  2,  6,  4,  4,  4,  4,  2,  2], //Medium (4): Mario, Ludwig, Mii
-          [  6,  6,  6,  6,  2,  6,  5,  5,  5,  5,  1,  2], //Medium (5): Luigi, Iggy
-          [  7,  7,  7,  7,  1,  7,  3,  3,  3,  3,  3,  2], //Heavy (1): Rosalina, King Boo, Link
+  chara: [[  1,  1,  1,  1,  4,  0, 10, 10, 10, 10,  5,  5], //Light (1): Baby Peach, Baby Daisy
+          [  1,  1,  1,  1,  5,  0,  9,  9,  9,  9,  3,  5], //Light (2): Baby Rosa, Lemmy
+          [  2,  2,  2,  2,  5,  1,  8,  8,  8,  8,  4,  5], //Light (3): Baby Mario, Baby Luigi, Dry Bones, Mii
+          [  3,  3,  3,  3,  4,  2,  8,  8,  8,  8,  5,  4], //Light (4): Koopa, Lakitu, Bowser Jr.
+          [  3,  3,  3,  3,  5,  2,  7,  7,  7,  7,  2,  4], //Light (5): Toadette, Wendy, Isabelle
+          [  4,  4,  4,  4,  4,  3,  7,  7,  7,  7,  4,  4], //Light (6): Toad, Shy Guy, Larry
+          [  5,  5,  5,  5,  4,  3,  6,  6,  6,  6,  3,  3], //Medium (1): Cat Peach, Inkling(F), Villager(F)
+          [  6,  6,  6,  6,  3,  4,  5,  5,  5,  5,  3,  4], //Medium (2): Peach, Daisy, Yoshi
+          [  6,  6,  6,  6,  3,  5,  5,  5,  5,  5,  1,  3], //Medium (3): Tanooki Mario, Inkling(M), Villager(M)
+          [  7,  7,  7,  7,  2,  6,  4,  4,  4,  4,  2,  3], //Medium (4): Mario, Ludwig, Mii
+          [  7,  7,  7,  7,  2,  6,  5,  5,  5,  5,  1,  3], //Medium (5): Luigi, Iggy
+          [  8,  8,  8,  8,  1,  7,  3,  3,  3,  3,  3,  2], //Heavy (1): Rosalina, King Boo, Link
           [  9,  9,  9,  9,  1,  8,  2,  2,  2,  2,  0,  1], //Heavy (2): Waluigi, DK, Roy
           [ 10, 10, 10, 10,  0,  9,  1,  1,  1,  1,  1,  0], //Heavy (3): Wario, Dry Bowser
           [  8,  8,  8,  8,  1, 10,  3,  3,  3,  3,  1,  1], //Heavy (4): Metal Mario, Pink Gold Peach
