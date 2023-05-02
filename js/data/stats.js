@@ -22,7 +22,7 @@ var stats = {
  
   //       SPD (W) (A) (AG) Ac  Wt Hnd (W) (A) (AG) Tr. MT
   kart:  [[  3,  3,  3,  3,  4,  2,  3,  2,  3,  3,  3,  5], //Standard, 300 SL Roadster, The Duke
-          [  1,  3,  1,  1,  6,  1,  5,  4,  2,  4,  4,  7], //Pipe Frame, City Tripper, Varmint
+          [  1,  3,  1,  1,  6,  1,  5,  4,  2,  4,  4,  6], //Pipe Frame, City Tripper, Varmint
           [  3,  3,  4,  5,  3,  3,  2,  2,  2,  4,  4,  5], //Mach 8, Sports Coupe, Inkstriker
           [  4,  5,  0,  2,  1,  4,  1,  5,  1,  1,  3,  3], //Steel Driver, Tri-Speeder, Bone Rattler
           [  2,  2,  4,  3,  5,  2,  4,  2,  4,  3,  3,  6], //Cat Cruiser, Comet, Yoshi Bike, Teddy Buggy
