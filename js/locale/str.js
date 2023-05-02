@@ -54,6 +54,7 @@ var str = {
           ["Tanooki Mario","Tanooki Mario","Mario tanooki","Mario tanooki"],
           ["Cat Peach","Cat Peach","Peach chat","Peach chat"],
           ["Yoshi","Yoshi","Yoshi","Yoshi"],
+          ["Birdo","Birdo","Birdo","Birdo","Birdo"],
           ["Toad","Toad","Toad","Toad","Toad"],
           ["Koopa","Koopa","Koopa","Koopa"],
           ["Shy Guy","Shy Guy","Maskache","Maskass"],
