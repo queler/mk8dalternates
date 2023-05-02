@@ -10,7 +10,7 @@ var stats = {
           [  3,  3,  3,  3,  5,  2,  7,  7,  7,  7,  2,  4], //Light (5): Toadette, Wendy, Isabelle
           [  4,  4,  4,  4,  4,  3,  7,  7,  7,  7,  4,  4], //Light (6): Toad, Shy Guy, Larry
           [  5,  5,  5,  5,  4,  3,  6,  6,  6,  6,  3,  3], //Medium (1): Cat Peach, Inkling(F), Villager(F)
-          [  6,  6,  6,  6,  3,  4,  5,  5,  5,  5,  3,  4], //Medium (2): Peach, Daisy, Yoshi
+          [  6,  6,  6,  6,  3,  4,  5,  5,  5,  5,  3,  4], //Medium (2): Peach, Daisy, Yoshi, Birdo
           [  6,  6,  6,  6,  3,  5,  5,  5,  5,  5,  1,  3], //Medium (3): Tanooki Mario, Inkling(M), Villager(M)
           [  7,  7,  7,  7,  2,  6,  4,  4,  4,  4,  2,  3], //Medium (4): Mario, Ludwig, Mii
           [  7,  7,  7,  7,  2,  6,  5,  5,  5,  5,  1,  3], //Medium (5): Luigi, Iggy
@@ -21,31 +21,31 @@ var stats = {
           [ 10, 10, 10, 10,  0, 10,  0,  0,  0,  0,  0,  0]],//Heavy (5): Bowser, Morton, Mii
  
   //       SPD (W) (A) (AG) Ac  Wt Hnd (W) (A) (AG) Tr. MT
-  kart:  [[  3,  3,  3,  3,  4,  2,  3,  2,  3,  3,  3,  4], //Standard, 300 SL Roadster, The Duke
-          [  1,  3,  1,  1,  6,  1,  5,  4,  2,  4,  4,  6], //Pipe Frame, City Tripper, Varmint
-          [  3,  3,  4,  5,  3,  3,  2,  2,  2,  4,  4,  4], //Mach 8, Sports Coupe, Inkstriker
-          [  4,  5,  0,  2,  1,  4,  1,  5,  1,  1,  3,  2], //Steel Driver, Tri-Speeder, Bone Rattler
-          [  2,  2,  4,  3,  5,  2,  4,  2,  4,  3,  3,  5], //Cat Cruiser, Comet, Yoshi Bike, Teddy Buggy
-          [  5,  1,  2,  4,  1,  3,  1,  1,  0,  2,  1,  1], //Circuit Special, B Dasher, P-Wing
-          [  5,  2,  1,  3,  0,  4,  0,  1,  0,  1,  5,  0], //Badwagon, GLA, Standard ATV
-          [  4,  3,  3,  3,  2,  1,  3,  3,  3,  2,  2,  3], //Prancer, Sport Bike, Jet Bike
+  kart:  [[  3,  3,  3,  3,  4,  2,  3,  2,  3,  3,  3,  5], //Standard, 300 SL Roadster, The Duke
+          [  1,  3,  1,  1,  6,  1,  5,  4,  2,  4,  4,  7], //Pipe Frame, City Tripper, Varmint
+          [  3,  3,  4,  5,  3,  3,  2,  2,  2,  4,  4,  5], //Mach 8, Sports Coupe, Inkstriker
+          [  4,  5,  0,  2,  1,  4,  1,  5,  1,  1,  3,  3], //Steel Driver, Tri-Speeder, Bone Rattler
+          [  2,  2,  4,  3,  5,  2,  4,  2,  4,  3,  3,  6], //Cat Cruiser, Comet, Yoshi Bike, Teddy Buggy
+          [  5,  1,  2,  4,  1,  3,  1,  1,  0,  2,  1,  2], //Circuit Special, B Dasher, P-Wing
+          [  5,  2,  1,  3,  0,  4,  0,  1,  0,  1,  5,  1], //Badwagon, GLA, Standard ATV
+          [  4,  3,  3,  3,  2,  1,  3,  3,  3,  2,  2,  4], //Prancer, Sport Bike, Jet Bike
           [  0,  1,  1,  2,  7,  0,  5,  4,  4,  5,  4,  7], //Biddybuggy, Mr. Scooty
           [  1,  5,  2,  0,  6,  0,  4,  5,  3,  2,  6,  6], //Landship, Streetle
-          [  4,  2,  3,  3,  2,  2,  3,  2,  2,  3,  0,  3], //Sneeker, Gold Standard, Master Cycle
+          [  4,  2,  3,  3,  2,  2,  3,  2,  2,  3,  0,  4], //Sneeker, Gold Standard, Master Cycle
           [  2,  2,  3,  4,  5,  1,  4,  3,  3,  4,  5,  5], //W 25 Silver Arrow, Standard Bike, Flame Rider, Wild Wiggler 
-          [  4,  2,  3,  4,  3,  0,  2,  3,  1,  5,  3,  3], //Blue Falcon, Splat Buggy
-          [  2,  4,  3,  3,  2,  3,  4,  4,  3,  3,  7,  3]],//Tanooki Kart, Koopa Clown
+          [  4,  2,  3,  4,  3,  0,  2,  3,  1,  5,  3,  4], //Blue Falcon, Splat Buggy
+          [  2,  4,  3,  3,  2,  3,  4,  4,  3,  3,  7,  4]],//Tanooki Kart, Koopa Clown
 
   //       SPD (W) (A) (AG) Ac  Wt Hnd (W) (A) (AG) Tr. MT
-  tire:  [[  2,  3,  3,  2,  4,  2,  3,  3,  3,  3,  5,  3], //Standard, Blue Standard, GLA Tires
-          [  2,  2,  1,  2,  2,  4,  0,  1,  1,  0,  7,  2], //Monster, Hot Monster
+  tire:  [[  2,  3,  3,  2,  4,  2,  3,  3,  3,  3,  5,  4], //Standard, Blue Standard, GLA Tires
+          [  2,  2,  1,  2,  2,  4,  0,  1,  1,  0,  7,  3], //Monster, Hot Monster
           [  0,  3,  3,  0,  6,  0,  4,  4,  4,  4,  4,  6], //Roller, Azure Roller
-          [  3,  2,  2,  4,  2,  2,  4,  4,  4,  3,  1,  2], //Slim, Wood, Crimson Slim
-          [  4,  0,  0,  4,  1,  3,  2,  0,  1,  2,  0,  0], //Slick, Cyber Slick
-          [  4,  3,  2,  1,  0,  4,  2,  2,  0,  1,  2,  0], //Metal, Gold Tires
+          [  3,  2,  2,  4,  2,  2,  4,  4,  4,  3,  1,  3], //Slim, Wood, Crimson Slim
+          [  4,  0,  0,  4,  1,  3,  2,  0,  1,  2,  0,  1], //Slick, Cyber Slick
+          [  4,  3,  2,  1,  0,  4,  2,  2,  0,  1,  2,  1], //Metal, Gold Tires
           [  1,  2,  2,  2,  5,  0,  3,  3,  2,  4,  3,  5], //Button, Leaf
-          [  3,  4,  1,  2,  3,  3,  1,  1,  1,  2,  6,  1], //Off-Road, Retro Off-Road, Triforce Tires
-          [  1,  1,  4,  1,  4,  1,  2,  1,  3,  3,  6,  4]],//Sponge, Cushion
+          [  3,  4,  1,  2,  3,  3,  1,  1,  1,  2,  6,  2], //Off-Road, Retro Off-Road, Triforce Tires
+          [  1,  1,  4,  1,  4,  1,  2,  1,  3,  3,  6,  5]],//Sponge, Cushion
 
   //       SPD (W) (A) (AG) Ac  Wt Hnd (W) (A) (AG) Tr. MT
   glider:[[  1,  1,  2,  0,  1,  1,  1,  0,  1,  1,  1,  1], //SuperGlider/etc
